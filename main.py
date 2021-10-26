@@ -28,8 +28,6 @@ while game_is_on:
     sleep(0.1)
 
 
-# Todo: Establish a 2nd Paddle for 2nd Player
-
 # Todo: Create a ball and make it move
 
 # Todo: Establish Ball-Move and Collision Model
@@ -37,7 +35,6 @@ while game_is_on:
 # Todo: Establish Ball-Paddle Collision Model
 
 # Todo: Manage Paddle-Missing event (Reset?)
-
 # Todo: Count the goals and display them
 
 screen.exitonclick()
