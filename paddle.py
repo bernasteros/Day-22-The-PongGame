@@ -10,13 +10,14 @@ PADDLE_LENGTH = 4
 UP = 90
 DOWN = 270
 
+
 class Paddle:
-    def __init__(self):
+    def __init__(self, x_position):
         self.paddle = []
-        self.segments()
+        self.segments(x_position)
         self.head = self.paddle[0]
 
-    def segments(self):
+    def segments(self, x_position):
         for segment in range(PADDLE_LENGTH):
             new_square = Turtle()
             new_square.setheading(UP)
@@ -24,6 +25,7 @@ class Paddle:
             new_square.shape(SHAPE)
             new_square.penup()
             new_square.sety(0 - 20 * segment)
+            new_square.setx(x_position)
             self.paddle.append(new_square)
 
     def move(self):
