@@ -1,14 +1,27 @@
+from time import sleep
+from paddle import Paddle
 from turtle import Screen
+
+WIDTH = 1000
+HEIGHT = 600
 
 # Establish a Basic-Screen
 screen = Screen()
-screen.setup(width=1000, height=600)
+screen.setup(width=WIDTH, height=HEIGHT)
 screen.bgcolor("black")
-screen.title("My Snake Game")
+screen.title("The Pong Game")
 screen.tracer(0)
 
-
 # Todo: Create a Paddle and make it steerable
+paddle = Paddle()
+
+game_is_on = True
+
+while game_is_on:
+    paddle.move()
+    screen.update()
+    sleep(0.1)
+
 
 # Todo: Establish a 2nd Paddle for 2nd Player
 
