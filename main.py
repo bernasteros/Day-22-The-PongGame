@@ -1,6 +1,7 @@
 from time import sleep
 from paddle import Paddle
 from turtle import Screen
+from ball import Ball
 
 WIDTH = 1000
 HEIGHT = 600
@@ -18,6 +19,7 @@ screen.tracer(0)
 
 p1 = Paddle(x_position=STARTING_POSITION * -1)
 p2 = Paddle(x_position=STARTING_POSITION)
+ball = Ball()
 
 screen.listen()
 screen.onkey(p1.up, "w")
