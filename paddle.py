@@ -4,7 +4,7 @@ from turtle import Turtle
 MOVE_DISTANCE = 20
 COLOR = "white"
 SHAPE = "square"
-PADDLE_LENGTH = 4
+PADDLE_LENGTH = 1
 
 # Steering
 UP = 90
@@ -23,6 +23,7 @@ class Paddle:
             new_square.setheading(UP)
             new_square.color(COLOR)
             new_square.shape(SHAPE)
+            new_square.shapesize(stretch_len=4)
             new_square.penup()
             new_square.sety(0 - 20 * segment)
             new_square.setx(x_position)
