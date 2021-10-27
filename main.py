@@ -14,13 +14,18 @@ screen.bgcolor("black")
 screen.title("The Pong Game")
 screen.tracer(0)
 
-# Todo: Create a Paddle and make it steerable
+# Create two Paddle and make it steerable
 
-p1 = Paddle(x_position=STARTING_POSITION)
-p2 = Paddle(x_position=STARTING_POSITION * -1)
+p1 = Paddle(x_position=STARTING_POSITION * -1)
+p2 = Paddle(x_position=STARTING_POSITION)
+
+screen.listen()
+screen.onkey(p1.up, "w")
+screen.onkey(p1.down, "s")
+screen.onkey(p2.up, "Up")
+screen.onkey(p2.down, "Down")
 
 game_is_on = True
-
 while game_is_on:
     p1.move()
     p2.move()
