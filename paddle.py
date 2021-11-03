@@ -11,8 +11,9 @@ UP = 90
 DOWN = 270
 
 
-class Paddle:
+class Paddle(Turtle):
     def __init__(self, x_position):
+        super().__init__()
         self.paddle = []
         self.segments(x_position)
         self.head = self.paddle[0]

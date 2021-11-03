@@ -5,7 +5,7 @@ from ball import Ball
 
 WIDTH = 1000
 HEIGHT = 600
-STARTING_POSITION = WIDTH/2 - 20
+STARTING_POSITION = WIDTH/2 - 40
 
 # Establish a Basic-Screen
 screen = Screen()
@@ -29,15 +29,17 @@ screen.onkey(p2.down, "Down")
 
 game_is_on = True
 while game_is_on:
+
     p1.move()
     p2.move()
     ball.move()
 
-    # Todo: Create a ball and make it move
+    if ball.ycor() > HEIGHT/2 - 20 or ball.ycor() < HEIGHT/2 * -1 + 20:
+        ball.bounce_y()
 
-    # Todo: Establish Ball-Move and Collision Model
-
-    # Todo: Establish Ball-Paddle Collision Model
+    if ball.distance(p2.head) < 50 and ball.xcor() > STARTING_POSITION - 20 \
+            or ball.distance(p1.head) < 50 and ball.xcor() < STARTING_POSITION - 20 * -1:
+        ball.bounce_x()
 
     # Todo: Manage Paddle-Missing event (Reset?)
     # Todo: Count the goals and display them
