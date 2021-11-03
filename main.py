@@ -31,17 +31,21 @@ game_is_on = True
 while game_is_on:
     p1.move()
     p2.move()
+    ball.move()
+
+    # Todo: Create a ball and make it move
+
+    # Todo: Establish Ball-Move and Collision Model
+
+    # Todo: Establish Ball-Paddle Collision Model
+
+    # Todo: Manage Paddle-Missing event (Reset?)
+    # Todo: Count the goals and display them
+
     screen.update()
     sleep(0.1)
 
 
-# Todo: Create a ball and make it move
 
-# Todo: Establish Ball-Move and Collision Model
-
-# Todo: Establish Ball-Paddle Collision Model
-
-# Todo: Manage Paddle-Missing event (Reset?)
-# Todo: Count the goals and display them
 
 screen.exitonclick()
