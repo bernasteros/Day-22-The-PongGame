@@ -29,5 +29,5 @@ class Ball(Turtle):
 
 # Todo: Reset ball if landed a goal
     def reset_ball(self):
-        pass
-
+        self.goto(0,0)
+        self.bounce_x()

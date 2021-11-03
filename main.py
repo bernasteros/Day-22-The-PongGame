@@ -38,16 +38,21 @@ while game_is_on:
         ball.bounce_y()
 
     if ball.distance(p2.head) < 50 and ball.xcor() > STARTING_POSITION - 20 \
-            or ball.distance(p1.head) < 50 and ball.xcor() < STARTING_POSITION - 20 * -1:
+            or ball.distance(p1.head) < 50 and ball.xcor() < (STARTING_POSITION) * -1 + 20:
         ball.bounce_x()
 
+    # Reset R Paddle miss
+    if ball.xcor() > STARTING_POSITION + 20:
+        ball.reset_ball()
+
+    # Reset L Paddle miss
+    if ball.xcor() < (STARTING_POSITION + 20) *-1:
+        ball.reset_ball()
     # Todo: Manage Paddle-Missing event (Reset?)
     # Todo: Count the goals and display them
 
+
     screen.update()
     sleep(0.1)
-
-
-
 
 screen.exitonclick()
