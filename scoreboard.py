@@ -1,13 +1,14 @@
 from turtle import Turtle
 
-STYLE = ('Courier', 30, 'bold')
+STYLE = ('Courier', 35, 'bold')
 
 
 class Score(Turtle):
-    def __init__(self):
+    def __init__(self, width, height):
         super().__init__()
         self.hideturtle()
-        self.sety(height/2 - 20)
+        self.sety(width/4)
+        self.setx(height/2 - 20)
         self.color("white")
         self.penup()
         self.count = 0
@@ -16,4 +17,4 @@ class Score(Turtle):
     def count_up(self):
         self.count += 1
         self.clear()
-        self.write("Score:" + str(self.count), font=STYLE, align='center')
+        self.write(str(self.count), font=STYLE, align='center')

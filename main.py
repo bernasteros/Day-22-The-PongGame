@@ -2,6 +2,7 @@ from time import sleep
 from paddle import Paddle
 from turtle import Screen
 from ball import Ball
+from scoreboard import Score
 
 WIDTH = 1000
 HEIGHT = 600
@@ -18,7 +19,9 @@ screen.tracer(0)
 # Create two Paddle and make it steerable
 
 p1 = Paddle(x_position=STARTING_POSITION * -1)
+p1_score = Score(width=WIDTH, height=HEIGHT)
 p2 = Paddle(x_position=STARTING_POSITION)
+p2_score = Score(width=WIDTH, height=HEIGHT*-1)
 ball = Ball()
 
 screen.listen()
@@ -44,11 +47,12 @@ while game_is_on:
     # Reset R Paddle miss
     if ball.xcor() > STARTING_POSITION + 20:
         ball.reset_ball()
+        p2_score.count_up()
 
     # Reset L Paddle miss
     if ball.xcor() < (STARTING_POSITION + 20) *-1:
         ball.reset_ball()
-    # Todo: Manage Paddle-Missing event (Reset?)
+        p1_score.count_up()
     # Todo: Count the goals and display them
 
 
